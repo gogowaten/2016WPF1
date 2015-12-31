@@ -1,0 +1,56 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_test02_ScrollViewer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="480" Width="640">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Canvas Width="{Binding ElementName=Thumbnail,Path=ActualWidth}"
+                Height="{Binding ElementName=Thumbnail,Path=ActualHeight}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="10"
+                UseLayoutRounding="True">
+            <Image x:Name="Thumbnail"
+                    Width="100"
+                    Stretch="Uniform" />
+            <Path Fill="#7FFFFFFF">
+                <Path.Data>
+                    <CombinedGeometry x:Name="CombinedGeometry"
+                                      GeometryCombineMode="Exclude" />
+                </Path.Data>
+            </Path>
+            
+        <!--<Border x:Name="Viewport"
+                    BorderBrush="Red"
+                    BorderThickness="2"
+                    Background="Transparent" />-->
+        
+            <Thumb x:Name="Viewport" DragDelta="OnDragDelta">
+                <Thumb.Template>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Border BorderBrush="Red" BorderThickness="2" Background="Transparent" />
+                    </ControlTemplate>
+                </Thumb.Template>
+            </Thumb>
+        </Canvas>
+
+        <ScrollViewer x:Name="ScrollViewer"
+                      Grid.Column="1"
+                      HorizontalScrollBarVisibility="Visible"
+                      VerticalScrollBarVisibility="Visible"
+            ScrollChanged="UpdateThumbnailViewport">
+            <Image x:Name="Image" />
+        </ScrollViewer>
+
+
+    
+    </Grid>
+</Window>
