@@ -1,0 +1,21 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_test03_ユーザーコントロールを作る"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <MediaElement Name="MediaElement1" Margin="0" 
+                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                      LoadedBehavior="Manual" UnloadedBehavior="Manual" 
+                      Source="D:\ブログ用\作物\スイートバジル\スイートバジル3dmarkyouok.mp4" />
+        <Button Name="btnPlay" Content="開始" Height="23" Width="75" Margin="0,0,174,12" 
+                HorizontalAlignment="Right" VerticalAlignment="Bottom" Opacity="0.4" />
+        <Button Name="btnPause" Content="一時停止" Height="23" Width="75" Margin="0,0,93,12" 
+                HorizontalAlignment="Right" VerticalAlignment="Bottom" Opacity="0.4" />
+        <Button Name="btnStop" Content="停止" Height="23" Width="75" Margin="0,0,12,12" 
+                HorizontalAlignment="Right" VerticalAlignment="Bottom" Opacity="0.4" />
+    </Grid>
+</Window>

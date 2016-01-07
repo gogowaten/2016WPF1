@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="App_test01.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App_test01"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            
+        </Grid.RowDefinitions>
+        <Button Grid.Row="1" x:Name="button1"  FontSize="24" HorizontalAlignment="Center" Margin="0,20"
+                RequestedTheme="Light" Background="DodgerBlue" Foreground="White"
+                Click="button1_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <FontIcon Glyph="&#128338;" FontFamily="Meiryo UI" Foreground="Orange"/>
+                    <TextBlock Text="現在時刻表示" Margin="9,0,0,0"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <TextBlock x:Name="textBlock" FontSize="48" Foreground="DodgerBlue" HorizontalAlignment="Center" TextWrapping="Wrap" 
+                   Text="TextBlock" VerticalAlignment="Center"/>
+        
+    </Grid>
+</Page>

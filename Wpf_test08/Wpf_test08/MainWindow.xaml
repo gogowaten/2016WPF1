@@ -1,0 +1,64 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_test08"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525"
+        
+        >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="1" Background="GreenYellow">
+            <ListView x:Name="listView" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+                <ListView.Resources>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Background" Value="#88FFFFFF"/>
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="Margin" Value="0,0,0,5"/>
+                        <Setter Property="BorderThickness" Value="5,5"/>
+                    </Style>
+                </ListView.Resources>
+                <ListViewItem Content="Insider.NET フォーラム" />
+                <ListViewItem Content="最新記事一覧" />
+                <ListViewItem Content="お気に入り" />
+            </ListView>
+            <Border Grid.Row="1" Background="#88FFFFFF" Padding="10,5">
+                <RichTextBox FontSize="10" Background="Transparent">
+                    <FlowDocument>
+                        <Paragraph FontWeight="Bold">
+                            @ITのRSSを読むツールです
+                        </Paragraph>
+                        <Paragraph>記事タイトルのタイルをタップすると、記事が読めます。
+                            <LineBreak/> 記事タイトルの上のセクション・ヘッダをタップすると、そのセクションの記事リストに切り替わります。
+                            <LineBreak/> お気に入り」に登録するには、記事タイトルのタイルを長押し（右クリック）します。
+                        </Paragraph>
+                    </FlowDocument>
+
+                </RichTextBox>
+            </Border>
+        </StackPanel>
+
+        <ListView Grid.Row="1" Grid.Column="1" Width="500" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListViewItem Background="DodgerBlue" Margin="0,0,0,10" BorderThickness="15,10" Width="500">
+                <StackPanel>
+                    <TextBlock Foreground="White" FontSize="24" TextWrapping="Wrap">記事タイトルその1・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・</TextBlock>
+                    <TextBlock Foreground="White" FontSize="12">20xx/xx/xx</TextBlock>
+                </StackPanel>
+            </ListViewItem>
+        </ListView>
+
+        <WebBrowser x:Name="wewView1" Grid.Column="2" Source="http://rss.rssad.jp/rss/itmatmarkit/fdotnet/rss.xml" Grid.Row="1"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,67 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_test06_エクスプローラ型アプリ"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="768" Width="1024"
+        
+        
+        d:DataContext="{d:DesignInstance Type=local:MainViewModel}">
+    
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33"/>
+            <RowDefinition Height="1*" MinHeight="137"/>
+            <RowDefinition Height="53" MinHeight="53"/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="#FFA0AFC3" BorderThickness="0,0,0,1.5">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Margin" Value="18,7,12,0"/>
+                        <Setter Property="Foreground" Value="#FF1E395B"/>
+                    </Style>
+                </StackPanel.Resources>
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFAFCFD" Offset="0"/>
+                        <GradientStop Color="#FFE4EFFB" Offset="1"/>
+                        <GradientStop Color="#FFE6F0FA" Offset="0.448"/>
+                        <GradientStop Color="#FFDCE6F4" Offset="0.502"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="整理"/>
+                <TextBlock x:Name="textBlock_Copy" TextWrapping="Wrap" Text="開く"/>
+                <TextBlock x:Name="textBlock_Copy1" TextWrapping="Wrap" Text="印刷"/>
+                <TextBlock x:Name="textBlock_Copy2" TextWrapping="Wrap" Text="書き込む"/>
+                <TextBlock x:Name="textBlock_Copy3" TextWrapping="Wrap" Text="新しいフォルダー"/>
+            </StackPanel>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="210" MinWidth="58"/>
+                <ColumnDefinition Width="585"/>
+                <ColumnDefinition Width="229*" MinWidth="69"/>
+            </Grid.ColumnDefinitions>
+            <TreeView x:Name="treeView" BorderThickness="0" Margin="0,0,1,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <TreeViewItem IsExpanded="True" Header="コンピューター">
+                    <TreeViewItem Header="ローカルディスク(C:)" HeaderStringFormat=""/>
+                    <TreeViewItem Header="ローカルディスク(D:)"/>
+                    <TreeViewItem Header="ローカルディスク(E:)"/>
+                </TreeViewItem>
+                <Button/>
+                <ListBoxItem/>
+            </TreeView>
+            <ListBox x:Name="listBox" Grid.Column="1" BorderThickness="0" Margin="0,0,1,0" />
+            <!--ItemsSource="{Binding Mode=TwoWay, Path=SelectedFile,Source={x:Static d:c} }"/>-->
+
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="App_test2_デジタル時計.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App_test2_デジタル時計"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock x:Name="textClock1" Text="00:00:00" FontSize="50" Foreground="LimeGreen" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="textClock2" Text="00:00:00" FontSize="50" Foreground="LimeGreen" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="textClock3" Text="{Binding NowTime}" FontSize="50" Foreground="LimeGreen" HorizontalAlignment="Center"/>
+
+            <TextBlock x:Name="textClock4" Text="00:00:00" FontSize="50" Foreground="BlueViolet" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Page>
