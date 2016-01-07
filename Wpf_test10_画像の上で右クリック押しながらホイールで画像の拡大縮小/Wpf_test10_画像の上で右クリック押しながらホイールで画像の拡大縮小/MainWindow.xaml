@@ -1,0 +1,27 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_test10_画像の上で右クリック押しながらホイールで画像の拡大縮小"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Background="PaleGoldenrod">
+            <local:ZoomableImage x:Name="zoomableImage" HorizontalAlignment="Center"  Margin="0,5" Width="100"
+                                 Source="D:\ブログ用\作業用\NEC_9011_2015_07_23_スイートバジル収穫.jpg"/>
+            <local:ZoomableImage x:Name="zoomableImage2" HorizontalAlignment="Left"  Margin="10,10,0,0" Width="100"
+                                 Source="D:\ブログ用\作業用\NEC_9011_2015_07_23_スイートバジル収穫.jpg"/>
+            <TextBlock FontSize="20" Background="DarkBlue" Foreground="White" TextAlignment="Center" Text="textblockkkkkkkkkk"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Background="Azure">
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Text="TextBlock" />
+        </StackPanel>
+        
+    </Grid>
+</Window>
