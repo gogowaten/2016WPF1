@@ -1,0 +1,93 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_test15_マウスドラッグでThumbコントロールの移動"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" x:Name="button" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
+        <Canvas Grid.Column="1" Background="PapayaWhip" x:Name="canvas1">
+
+            <Thumb x:Name="thumb1" DragDelta="tmb_DragDelta" Background="#B2FF0000" Width="100" Height="70" BorderThickness="0" 
+                   Canvas.Left="10" Canvas.Top="0"/>
+
+
+            <Thumb x:Name="thumb2" Canvas.Top="120" Canvas.Left="20"  >
+                <Thumb.Template>
+                    <ControlTemplate>
+                        <Grid Width="100" Height="30">
+                            <Ellipse Fill="Red" Stroke="Blue" Opacity="0.5"/>
+                            <TextBlock Text="ugoku" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Thumb.Template>
+            </Thumb>
+
+            <Thumb x:Name="thumb3" Margin="0,220" DragDelta="tmb_DragDelta" >
+                <Thumb.Template>
+                    <ControlTemplate>
+                        <Grid Width="100" Height="30">
+                            <Rectangle Fill="#992CF7F7"/>
+                            <TextBlock Text="ugoku" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Thumb.Template>
+            </Thumb>
+            <Thumb x:Name="thumb4" DragDelta="tmb_DragDelta" Height="128" Width="128" Canvas.Left="150" >
+                <Thumb.Background>
+                    <ImageBrush ImageSource="D:\ブログ用\collection_3.png"/>
+                </Thumb.Background>
+            </Thumb>
+            <Thumb x:Name="thumb5" Margin="150,180" DragDelta="tmb_DragDelta" >
+                <Thumb.Template>
+                    <ControlTemplate>
+                        <Grid Width="128" Height="128" >
+                            <!--<Image Source="D:\ブログ用\collection_3.png"></Image>-->
+                            <Grid.Background>
+                                <ImageBrush ImageSource="D:\ブログ用\collection_3.png"/>
+                            </Grid.Background>
+
+                        </Grid>
+                    </ControlTemplate>
+                </Thumb.Template>
+            </Thumb>
+            <Thumb x:Name="thumb6" Height="128" Width="128" Margin="300,0" Canvas.Left="0" Canvas.Top="0" DragDelta="tmb_DragDelta">
+                <Thumb.Template>
+                    <ControlTemplate>
+                        <Image Source="D:\ブログ用\collection_3.png"/>
+                    </ControlTemplate>
+                </Thumb.Template>
+            </Thumb>
+        </Canvas>
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="BorderBrush" Value="Blue"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Margin" Value="0,1"/>
+                </Style>
+            </StackPanel.Resources>
+            <Border Margin="0,30,0,0">
+                <TextBlock x:Name="textBlock1" Text="textBlock1" Margin="0,0,0,0"/>
+            </Border>
+            <Border>
+                <TextBlock x:Name="textBlock2" Text="TextBlock2" />
+            </Border>
+            <TextBlock x:Name="textBlock3" Text="textBlock3" />
+            <TextBlock x:Name="textBlock4" Text="textBlock4" />
+            <Border>
+                <TextBlock x:Name="textBlock5" Text="textBlock5"/>
+            </Border>
+            <TextBlock x:Name="textBlock6" Text="textBlock6"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
