@@ -1,0 +1,9 @@
+﻿<Application x:Class="Wpf_test11_画像の上で右クリック押しながらホイールで画像の拡大縮小CS編.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Wpf_test11_画像の上で右クリック押しながらホイールで画像の拡大縮小CS編"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
